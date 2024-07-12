@@ -21,7 +21,7 @@ namespace Assignment
         public string? Name { get; set; }
         public SecurityLevels SecurityLevel { get; set; }
         public decimal Salary { get; set; }
-        public DateOnly HiringDate { get; set; }
+        public HiringDate HiringDate { get; set; }
         public Gender Gender { get; set; }
 
         public Employee(int Id , string Name , decimal Salary , Gender Gender)
@@ -30,7 +30,7 @@ namespace Assignment
             this.Name = Name;
             this.Salary = Salary;
             this.Gender = Gender;
-            this.HiringDate = DateOnly.FromDateTime(DateTime.Now);
+            this.HiringDate = new HiringDate(DateTime.Now.Day , DateTime.Now.Month , DateTime.Now.Year);
             this.SecurityLevel |= SecurityLevels.Guest | SecurityLevels.DBA | SecurityLevels.Developer | SecurityLevels.Secertary;
         }
 
