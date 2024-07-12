@@ -41,6 +41,12 @@ namespace Assignment
             this.SecurityLevel = Privileges;
         }
 
+        // ctor with Date 
+        public Employee(int Id, string Name, decimal Salary, Gender Gender, int Day , int Month , int Year , SecurityLevels Privileges) :
+            this(Id , Name , Salary , Gender , Privileges)
+        {
+            this.HiringDate = new(Day, Month, Year);
+        }
         public override string ToString()
         {
             return string.Format("ID : {0} \nName : {1} \nSalary : {2:c} \nGender : {3} \nHire Date : {4} \nPrivileges : {5}",
